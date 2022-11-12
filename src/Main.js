@@ -1,7 +1,9 @@
+import Grid from "./Grid";
+
 function Main() {
 	return (
 		<main>
-			<div>Grid</div>
+			<Grid />
 		</main>
 	);
 }
