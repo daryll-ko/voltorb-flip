@@ -20,7 +20,8 @@ function Main() {
 	const flipGridSquare = (index) => {
 		setGridState((currentGridState) =>
 			currentGridState.map(({ faceUp, value }, i) => ({
-				faceUp: i === index && !faceUp ? !faceUp : faceUp,
+				faceUp:
+					i === index && !faceUp && !gameOver && !gameClear ? !faceUp : faceUp,
 				value,
 			}))
 		);
@@ -33,10 +34,22 @@ function Main() {
 		});
 	};
 
+	const gameOver = gridState.reduce(
+		(acc, { faceUp, value }) => acc || (value === 0 && faceUp),
+		false
+	);
+
+	const gameClear = gridState.reduce(
+		(acc, { faceUp, value }) => acc && (value === 0 || faceUp),
+		true
+	);
+
 	return (
 		<main>
 			<Grid gridState={gridState} flipGridSquare={flipGridSquare} />
 			<p>Current score: {score}</p>
+			{gameOver && <p>Game over!</p>}
+			{gameClear && <p>Clear!</p>}
 		</main>
 	);
 }
