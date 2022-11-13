@@ -15,19 +15,28 @@ function randomStateArray() {
 
 function Main() {
 	const [gridState, setGridState] = useState(randomStateArray());
+	const [score, setScore] = useState(1);
 
 	const flipGridSquare = (index) => {
 		setGridState((currentGridState) =>
 			currentGridState.map(({ faceUp, value }, i) => ({
-				faceUp: i === index ? !faceUp : faceUp,
+				faceUp: i === index && !faceUp ? !faceUp : faceUp,
 				value,
 			}))
 		);
+		setScore((currentScore) => {
+			const multiplier = gridState.reduce(
+				(acc, { _, value }, i) => (i === index ? value : acc),
+				0
+			);
+			return currentScore * multiplier;
+		});
 	};
 
 	return (
 		<main>
 			<Grid gridState={gridState} flipGridSquare={flipGridSquare} />
+			<p>Current score: {score}</p>
 		</main>
 	);
 }
