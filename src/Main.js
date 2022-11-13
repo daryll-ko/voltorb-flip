@@ -48,6 +48,7 @@ function Main() {
 	return (
 		<main>
 			<Field gridState={gridState} flipGridSquare={flipGridSquare} />
+			<br />
 			<p>Current score: {score}</p>
 			{gameOver && <p>Game over!</p>}
 			{gameClear && <p>Clear!</p>}

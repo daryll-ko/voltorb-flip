@@ -1,6 +1,7 @@
 .field {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
-	width: 350px;
+	font-size: 150%;
+	gap: 16px;
+	width: 560px;
 }

@@ -1,14 +1,15 @@
 .tallySquare {
-	border: 1px solid green;
+	box-sizing: border-box;
+	border: 2px solid black;
 	font-family: monospace;
-	height: 50px;
-	width: 50px;
+	height: 80px;
+	width: 80px;
 }
 
 .tallySquare > p {
 	align-items: center;
 	display: flex;
-	height: 25px;
+	height: 40px;
 	padding-left: 5px;
 }
 
