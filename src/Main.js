@@ -2,20 +2,26 @@ import { useState } from "react";
 import "./Main.css";
 import Grid from "./Grid";
 
-function randomBinaryArray() {
-	const array = [];
+function randomStateArray() {
+	const valueArray = [];
 	for (let i = 0; i < 25; i += 1) {
-		array.push(Math.floor(Math.random() * 2));
+		valueArray.push(Math.floor(Math.random() * 4));
 	}
-	return array;
+	return valueArray.map((value) => ({
+		faceUp: false,
+		value,
+	}));
 }
 
 function Main() {
-	const [gridState, setGridState] = useState(randomBinaryArray());
+	const [gridState, setGridState] = useState(randomStateArray());
 
 	const flipGridSquare = (index) => {
 		setGridState((currentGridState) =>
-			currentGridState.map((value, i) => (i === index ? value ^ 1 : value))
+			currentGridState.map(({ faceUp, value }, i) => ({
+				faceUp: i === index ? !faceUp : faceUp,
+				value,
+			}))
 		);
 	};
 

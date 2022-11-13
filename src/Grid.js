@@ -2,11 +2,12 @@ import "./Grid.css";
 import GridSquare from "./GridSquare";
 
 function Grid({ gridState, flipGridSquare }) {
-	const gridSquares = gridState.map((gridSquareState, index) => (
+	const gridSquares = gridState.map(({ faceUp, value }, index) => (
 		<GridSquare
 			key={index}
 			index={index}
-			gridSquareState={gridSquareState}
+			faceUp={faceUp}
+			value={value}
 			flipGridSquare={flipGridSquare}
 		></GridSquare>
 	));

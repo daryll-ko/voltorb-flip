@@ -1,9 +1,9 @@
 import "./GridSquare.css";
 
-function GridSquare({ index, gridSquareState, flipGridSquare }) {
+function GridSquare({ index, faceUp, value, flipGridSquare }) {
 	return (
 		<div className="gridSquare" onClick={() => flipGridSquare(index)}>
-			<p>{gridSquareState}</p>
+			<p>{faceUp ? value : "?"}</p>
 		</div>
 	);
 }
