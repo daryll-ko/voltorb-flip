@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Main.css";
 import Grid from "./Grid";
 
 function randomBinaryArray() {

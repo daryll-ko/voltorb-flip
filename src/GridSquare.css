@@ -1,5 +1,8 @@
 .gridSquare {
+	align-items: center;
 	border: 1px solid black;
+	display: flex;
 	height: 50px;
+	justify-content: center;
 	width: 50px;
 }
