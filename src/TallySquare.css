@@ -1,5 +1,6 @@
 .tallySquare {
 	border: 1px solid green;
+	font-family: monospace;
 	height: 50px;
 	width: 50px;
 }
