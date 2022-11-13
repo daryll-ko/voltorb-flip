@@ -1,7 +1,6 @@
-.grid {
-	box-sizing: content-box;
-	border: 1px solid black;
+.field {
 	display: flex;
 	flex-wrap: wrap;
-	width: 250px;
+	gap: 10px;
+	width: 350px;
 }

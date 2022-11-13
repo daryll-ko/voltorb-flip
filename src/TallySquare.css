@@ -1,0 +1,7 @@
+.tallySquare {
+	align-items: center;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	width: 50px;
+}
