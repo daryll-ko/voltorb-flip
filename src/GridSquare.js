@@ -1,17 +1,8 @@
 import "./GridSquare.css";
 
-function flipGridSquareState() {
-	
-}
-
-function GridSquare({ gridSquareState }) {
+function GridSquare({ index, gridSquareState, flipGridSquare }) {
 	return (
-		<div
-			className="gridSquare"
-			onClick={() => {
-				flipGridSquareState();
-			}}
-		>
+		<div className="gridSquare" onClick={() => flipGridSquare(index)}>
 			{gridSquareState}
 		</div>
 	);

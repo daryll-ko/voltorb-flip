@@ -12,9 +12,15 @@ function randomBinaryArray() {
 function Main() {
 	const [gridState, setGridState] = useState(randomBinaryArray());
 
+	const flipGridSquare = (index) => {
+		setGridState((currentGridState) =>
+			currentGridState.map((value, i) => (i === index ? value ^ 1 : value))
+		);
+	};
+
 	return (
 		<main>
-			<Grid gridState={gridState} setGridState={setGridState} />
+			<Grid gridState={gridState} flipGridSquare={flipGridSquare} />
 		</main>
 	);
 }
