@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Main.css";
-import Grid from "./Grid";
+import Field from "./Field";
 
 function randomStateArray() {
 	const valueArray = [];
@@ -46,7 +46,7 @@ function Main() {
 
 	return (
 		<main>
-			<Grid gridState={gridState} flipGridSquare={flipGridSquare} />
+			<Field gridState={gridState} flipGridSquare={flipGridSquare} />
 			<p>Current score: {score}</p>
 			{gameOver && <p>Game over!</p>}
 			{gameClear && <p>Clear!</p>}

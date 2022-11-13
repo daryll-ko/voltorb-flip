@@ -1,17 +1,17 @@
-import "./Grid.css";
-import GridSquare from "./GridSquare";
+import "./Field.css";
+import FieldSquare from "./FieldSquare";
 
-function Grid({ gridState, flipGridSquare }) {
+function Field({ gridState, flipGridSquare }) {
 	const gridSquares = gridState.map(({ faceUp, value }, index) => (
-		<GridSquare
+		<FieldSquare
 			key={index}
 			index={index}
 			faceUp={faceUp}
 			value={value}
 			flipGridSquare={flipGridSquare}
-		></GridSquare>
+		></FieldSquare>
 	));
 	return <div className="grid">{gridSquares}</div>;
 }
 
-export default Grid;
+export default Field;

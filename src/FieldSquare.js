@@ -1,6 +1,6 @@
-import "./GridSquare.css";
+import "./FieldSquare.css";
 
-function GridSquare({ index, faceUp, value, flipGridSquare }) {
+function FieldSquare({ index, faceUp, value, flipGridSquare }) {
 	return (
 		<div className="gridSquare" onClick={() => flipGridSquare(index)}>
 			<p>{faceUp ? value : "?"}</p>
@@ -8,4 +8,4 @@ function GridSquare({ index, faceUp, value, flipGridSquare }) {
 	);
 }
 
-export default GridSquare;
+export default FieldSquare;
