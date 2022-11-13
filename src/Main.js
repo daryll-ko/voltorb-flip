@@ -15,6 +15,7 @@ function randomStateArray() {
 
 function Main() {
 	const [gridState, setGridState] = useState(randomStateArray());
+	const [globalScore, setGlobalScore] = useState(0);
 	const [score, setScore] = useState(1);
 
 	const flipGridSquare = (index) => {
@@ -45,11 +46,18 @@ function Main() {
 		true
 	);
 
+	if (gameClear) {
+		setGridState(randomStateArray());
+		setGlobalScore((currentGlobalScore) => currentGlobalScore + score);
+		setScore(1);
+	}
+
 	return (
 		<main>
 			<Field gridState={gridState} flipGridSquare={flipGridSquare} />
 			<br />
-			<p>Current score: {score}</p>
+			<p>Total coins: {globalScore}</p>
+			<p>Current coins: {score}</p>
 			{gameOver && <p>Game over!</p>}
 			{gameClear && <p>Clear!</p>}
 		</main>
