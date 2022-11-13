@@ -41,7 +41,7 @@ function Main() {
 	);
 
 	const gameClear = gridState.reduce(
-		(acc, { faceUp, value }) => acc && (value === 0 || faceUp),
+		(acc, { faceUp, value }) => acc && (value <= 1 || faceUp),
 		true
 	);
 
