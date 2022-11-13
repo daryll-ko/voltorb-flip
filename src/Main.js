@@ -26,8 +26,8 @@ function Main() {
 		);
 		setScore((currentScore) => {
 			const multiplier = gridState.reduce(
-				(acc, { _, value }, i) => (i === index ? value : acc),
-				0
+				(acc, { faceUp, value }, i) => (i === index && !faceUp ? value : acc),
+				1
 			);
 			return currentScore * multiplier;
 		});
