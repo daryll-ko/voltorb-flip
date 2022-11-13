@@ -14,7 +14,7 @@ function Main() {
 
 	return (
 		<main>
-			<Grid gridState={gridState} />
+			<Grid gridState={gridState} setGridState={setGridState} />
 		</main>
 	);
 }
