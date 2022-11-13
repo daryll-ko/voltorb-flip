@@ -3,7 +3,8 @@ import "./TallySquare.css";
 function TallySquare({ sum, voltorb }) {
 	return (
 		<div className="tallySquare">
-			{sum} | {voltorb}
+			<p className="tallySquareSum">{sum}</p>
+			<p>{voltorb}</p>
 		</div>
 	);
 }
