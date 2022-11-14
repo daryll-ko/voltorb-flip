@@ -16,7 +16,7 @@ function randomStateArray() {
 function Main() {
 	const [gridState, setGridState] = useState(randomStateArray());
 	const [globalScore, setGlobalScore] = useState(0);
-	const [score, setScore] = useState(1);
+	const [localScore, setLocalScore] = useState(1);
 
 	const flipGridSquare = (index) => {
 		setGridState((currentGridState) =>
@@ -26,13 +26,13 @@ function Main() {
 				value,
 			}))
 		);
-		setScore((currentScore) => {
+		setLocalScore((currentLocalScore) => {
 			const multiplier = gridState.reduce(
 				(acc, { faceUp, value }, i) =>
 					i === index && !faceUp && !gameOver && !gameClear ? value : acc,
 				1
 			);
-			return currentScore * multiplier;
+			return currentLocalScore * multiplier;
 		});
 	};
 
@@ -48,8 +48,8 @@ function Main() {
 
 	if (gameClear) {
 		setGridState(randomStateArray());
-		setGlobalScore((currentGlobalScore) => currentGlobalScore + score);
-		setScore(1);
+		setGlobalScore((currentGlobalScore) => currentGlobalScore + localScore);
+		setLocalScore(1);
 	}
 
 	return (
@@ -57,7 +57,7 @@ function Main() {
 			<Field gridState={gridState} flipGridSquare={flipGridSquare} />
 			<br />
 			<p>Total coins: {globalScore}</p>
-			<p>Current coins: {score}</p>
+			<p>Current coins: {localScore}</p>
 			{gameOver && <p>Game over!</p>}
 			{gameClear && <p>Clear!</p>}
 		</main>
