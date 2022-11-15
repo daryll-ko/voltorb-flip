@@ -66,7 +66,7 @@ function Main() {
 					gameOver={gameOver}
 					flipGridSquare={flipGridSquare}
 				/>
-				<div className="scores">
+				<div className={`scores ${gameOver ? "adjusted" : ""}`}>
 					<p>
 						Total coins: <span className="bold">{globalScore}</span>
 					</p>
