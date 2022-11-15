@@ -2,8 +2,8 @@ import "./Field.css";
 import GridSquare from "./GridSquare";
 import TallySquare from "./TallySquare";
 
-function Field({ gridState, gameOver, gameClear, flipGridSquare }) {
-	const gridSquares = gridState.map(({ faceUp, value }, index) => (
+function Field({ board, gameOver, gameClear, flipGridSquare }) {
+	const gridSquares = board.map(({ faceUp, value }, index) => (
 		<GridSquare
 			key={index}
 			index={index}
@@ -20,8 +20,8 @@ function Field({ gridState, gameOver, gameClear, flipGridSquare }) {
 		voltorbCount = 0;
 	for (let i = 0; i < 25; ++i) {
 		fieldSquares.push(gridSquares[i]);
-		if (gridState[i].value !== 0) {
-			sum += gridState[i].value;
+		if (board[i].value !== 0) {
+			sum += board[i].value;
 		} else {
 			voltorbCount += 1;
 		}
@@ -35,8 +35,8 @@ function Field({ gridState, gameOver, gameClear, flipGridSquare }) {
 	for (let j = 0; j < 5; ++j) {
 		sum = voltorbCount = 0;
 		for (let k = j; k < 25; k += 5) {
-			if (gridState[k].value !== 0) {
-				sum += gridState[k].value;
+			if (board[k].value !== 0) {
+				sum += board[k].value;
 			} else {
 				voltorbCount += 1;
 			}
