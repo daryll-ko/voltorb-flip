@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Main.css";
 import Field from "./Field";
-import generateBoard from "./utils/generateBoard";
+import generateBoard from "../utils/generateBoard";
 
 function Main() {
 	const [gridState, setGridState] = useState({

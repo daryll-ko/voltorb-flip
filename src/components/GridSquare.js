@@ -1,5 +1,5 @@
 import "./GridSquare.css";
-import voltorb from "./images/voltorb.png";
+import voltorb from "../images/voltorb.png";
 
 function GridSquare({
 	index,
