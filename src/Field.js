@@ -25,7 +25,9 @@ function Field({ gridState, gameOver, flipGridSquare }) {
 			voltorbCount += 1;
 		}
 		if (i % 5 === 4) {
-			fieldSquares.push(<TallySquare sum={sum} voltorbCount={voltorbCount} />);
+			fieldSquares.push(
+				<TallySquare key={25 + i / 5} sum={sum} voltorbCount={voltorbCount} />
+			);
 			sum = voltorbCount = 0;
 		}
 	}
@@ -38,7 +40,9 @@ function Field({ gridState, gameOver, flipGridSquare }) {
 				voltorbCount += 1;
 			}
 		}
-		fieldSquares.push(<TallySquare sum={sum} voltorbCount={voltorbCount} />);
+		fieldSquares.push(
+			<TallySquare key={30 + j} sum={sum} voltorbCount={voltorbCount} />
+		);
 	}
 
 	return <div className="field">{fieldSquares}</div>;
