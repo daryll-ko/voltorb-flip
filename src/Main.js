@@ -1,20 +1,10 @@
 import { useState } from "react";
 import "./Main.css";
 import Field from "./Field";
-
-function randomStateArray() {
-	const valueArray = [];
-	for (let i = 0; i < 25; i += 1) {
-		valueArray.push(Math.floor(Math.random() * 4));
-	}
-	return valueArray.map((value) => ({
-		faceUp: false,
-		value,
-	}));
-}
+import generateBoard from "./utils/generateBoard";
 
 function Main() {
-	const [gridState, setGridState] = useState(randomStateArray());
+	const [gridState, setGridState] = useState(generateBoard(1));
 	const [globalScore, setGlobalScore] = useState(0);
 	const [localScore, setLocalScore] = useState(1);
 
@@ -47,13 +37,13 @@ function Main() {
 	);
 
 	const nextStage = () => {
-		setGridState(randomStateArray());
+		setGridState(generateBoard(1));
 		setGlobalScore((currentGlobalScore) => currentGlobalScore + localScore);
 		setLocalScore(1);
 	};
 
 	const restartGame = () => {
-		setGridState(randomStateArray());
+		setGridState(generateBoard(1));
 		setGlobalScore(0);
 		setLocalScore(1);
 	};
