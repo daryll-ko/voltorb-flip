@@ -1,4 +1,5 @@
 import "./GridSquare.css";
+import voltorb from "./voltorb.png";
 
 function GridSquare({ index, faceUp, value, gameOver, flipGridSquare }) {
 	return (
@@ -10,7 +11,15 @@ function GridSquare({ index, faceUp, value, gameOver, flipGridSquare }) {
 			}`}
 			onClick={() => flipGridSquare(index)}
 		>
-			<p>{faceUp || gameOver ? value : "?"}</p>
+			{value === 0 ? (
+				faceUp || gameOver ? (
+					<img src={voltorb} alt="Voltorb" className="voltorb" />
+				) : (
+					<p>?</p>
+				)
+			) : (
+				<p>{faceUp || gameOver ? value : "?"}</p>
+			)}
 		</div>
 	);
 }

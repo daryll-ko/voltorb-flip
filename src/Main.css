@@ -10,3 +10,10 @@ main {
 .bold {
 	font-weight: bold;
 }
+
+.scores {
+	display: flex;
+	gap: 2em;
+	justify-content: center;
+	margin-top: 2em;
+}

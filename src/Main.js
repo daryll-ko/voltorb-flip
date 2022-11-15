@@ -60,13 +60,14 @@ function Main() {
 					gameOver={gameOver}
 					flipGridSquare={flipGridSquare}
 				/>
-				<br />
-				<p>
-					Total coins: <span className="bold">{globalScore}</span>
-				</p>
-				<p>
-					Current coins: <span className="bold">{localScore}</span>
-				</p>
+				<div className="scores">
+					<p>
+						Total coins: <span className="bold">{globalScore}</span>
+					</p>
+					<p>
+						Current coins: <span className="bold">{localScore}</span>
+					</p>
+				</div>
 				{gameOver && <p>Game over!</p>}
 			</div>
 		</main>
