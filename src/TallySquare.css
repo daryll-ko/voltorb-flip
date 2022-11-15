@@ -6,7 +6,7 @@
 	width: 80px;
 }
 
-.tallySquare > p {
+.tallySquareInner {
 	align-items: center;
 	display: flex;
 	height: 40px;
@@ -15,4 +15,9 @@
 
 .tallySquareSum {
 	border-bottom: 2px solid black;
+}
+
+.image {
+	height: 20px;
+	margin-right: 0.5em;
 }
