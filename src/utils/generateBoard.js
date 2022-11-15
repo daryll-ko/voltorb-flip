@@ -78,7 +78,10 @@ function generateBoard(level) {
 		}
 	}
 	valueArray = shuffleArray(valueArray, 25);
-	return valueArray;
+	return valueArray.map((value) => ({
+		faceUp: false,
+		value,
+	}));
 }
 
 export default generateBoard;
