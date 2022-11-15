@@ -1,6 +1,6 @@
 import "./TallySquare.css";
-import coins from "./coins.webp";
-import voltorb from "./voltorb.png";
+import coins from "./images/coins.webp";
+import voltorb from "./images/voltorb.png";
 
 function TallySquare({ sum, voltorbCount }) {
 	return (

@@ -1,4 +1,4 @@
-import logo from "./voltorb.png";
+import logo from "./images/voltorb.png";
 import "./Header.css";
 
 function Header() {
