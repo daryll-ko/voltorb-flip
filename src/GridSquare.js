@@ -12,7 +12,7 @@ function GridSquare({
 	return (
 		<div
 			className={`gridSquare ${faceUp ? "faceUp" : ""} ${
-				!(gameOver || gameClear) ? "clickable" : ""
+				!(faceUp || gameOver || gameClear) ? "clickable" : ""
 			} ${!faceUp && (gameOver || gameClear) ? "aftermath" : ""} ${
 				faceUp && value === 0 ? "offender" : ""
 			}`}
