@@ -67,8 +67,8 @@ function Main() {
 					<p>
 						Current coins: <span className="bold">{localScore}</span>
 					</p>
+					{gameOver && <p>Game over!</p>}
 				</div>
-				{gameOver && <p>Game over!</p>}
 			</div>
 		</main>
 	);
