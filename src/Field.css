@@ -5,3 +5,11 @@
 	gap: 16px;
 	width: 560px;
 }
+
+@media (max-width: 700px) {
+	.field {
+		font-size: 125%;
+		gap: 12px;
+		width: 420px;
+	}
+}

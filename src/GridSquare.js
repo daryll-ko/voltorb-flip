@@ -4,10 +4,10 @@ import voltorb from "./voltorb.png";
 function GridSquare({ index, faceUp, value, gameOver, flipGridSquare }) {
 	return (
 		<div
-			className={`gridSquare ${faceUp && "faceUp"} ${
-				!gameOver && "clickable"
-			} ${!faceUp && gameOver && "aftermath"} ${
-				faceUp && value === 0 && "offender"
+			className={`gridSquare ${faceUp ? "faceUp" : ""} ${
+				!gameOver ? "clickable" : ""
+			} ${!faceUp && gameOver ? "aftermath" : ""} ${
+				faceUp && value === 0 ? "offender" : ""
 			}`}
 			onClick={() => flipGridSquare(index)}
 		>

@@ -21,3 +21,17 @@
 	height: 20px;
 	margin-right: 0.5em;
 }
+
+@media (max-width: 700px) {
+	.tallySquare {
+		height: 60px;
+		width: 60px;
+	}
+	.tallySquareInner {
+		height: 30px;
+		padding-left: 6px;
+	}
+	.image {
+		height: 15px;
+	}
+}

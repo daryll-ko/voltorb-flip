@@ -33,3 +33,13 @@
 .offender {
 	border: 2px solid red;
 }
+
+@media (max-width: 700px) {
+	.gridSquare {
+		height: 60px;
+		width: 60px;
+	}
+	.voltorb {
+		height: 30px;
+	}
+}
