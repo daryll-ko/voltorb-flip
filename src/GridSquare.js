@@ -1,12 +1,14 @@
 import "./GridSquare.css";
 
-function GridSquare({ index, faceUp, value, flipGridSquare }) {
+function GridSquare({ index, faceUp, value, gameOver, flipGridSquare }) {
 	return (
 		<div
-			className={`gridSquare ${faceUp && "faceUp"}`}
+			className={`gridSquare ${faceUp && "faceUp"} ${
+				!faceUp && gameOver && "aftermath"
+			} ${faceUp && value === 0 && "offender"}`}
 			onClick={() => flipGridSquare(index)}
 		>
-			<p>{faceUp ? value : "?"}</p>
+			<p>{faceUp || gameOver ? value : "?"}</p>
 		</div>
 	);
 }

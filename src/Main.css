@@ -6,3 +6,7 @@ main {
 .wrapper {
 	display: inline-block;
 }
+
+.bold {
+	font-weight: bold;
+}

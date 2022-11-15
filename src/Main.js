@@ -55,12 +55,19 @@ function Main() {
 	return (
 		<main>
 			<div className="wrapper">
-				<Field gridState={gridState} flipGridSquare={flipGridSquare} />
+				<Field
+					gridState={gridState}
+					gameOver={gameOver}
+					flipGridSquare={flipGridSquare}
+				/>
 				<br />
-				<p>Total coins: {globalScore}</p>
-				<p>Current coins: {localScore}</p>
+				<p>
+					Total coins: <span className="bold">{globalScore}</span>
+				</p>
+				<p>
+					Current coins: <span className="bold">{localScore}</span>
+				</p>
 				{gameOver && <p>Game over!</p>}
-				{gameClear && <p>Clear!</p>}
 			</div>
 		</main>
 	);

@@ -2,13 +2,14 @@ import "./Field.css";
 import GridSquare from "./GridSquare";
 import TallySquare from "./TallySquare";
 
-function Field({ gridState, flipGridSquare }) {
+function Field({ gridState, gameOver, flipGridSquare }) {
 	const gridSquares = gridState.map(({ faceUp, value }, index) => (
 		<GridSquare
 			key={index}
 			index={index}
 			faceUp={faceUp}
 			value={value}
+			gameOver={gameOver}
 			flipGridSquare={flipGridSquare}
 		></GridSquare>
 	));
