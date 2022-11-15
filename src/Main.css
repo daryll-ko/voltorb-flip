@@ -12,8 +12,16 @@ main {
 }
 
 .scores {
+	align-items: center;
 	display: flex;
 	gap: 2em;
 	justify-content: center;
 	margin-top: 2em;
+}
+
+.button {
+	background-color: transparent;
+	border: 1px solid black;
+	cursor: pointer;
+	font: inherit;
 }

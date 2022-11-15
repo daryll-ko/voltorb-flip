@@ -52,6 +52,12 @@ function Main() {
 		setLocalScore(1);
 	}
 
+	const restartGame = () => {
+		setGridState(randomStateArray());
+		setGlobalScore(0);
+		setLocalScore(1);
+	};
+
 	return (
 		<main>
 			<div className="wrapper">
@@ -67,7 +73,14 @@ function Main() {
 					<p>
 						Current coins: <span className="bold">{localScore}</span>
 					</p>
-					{gameOver && <p>Game over!</p>}
+					{gameOver && (
+						<>
+							<p>Game over!</p>
+							<button onClick={restartGame} className="button">
+								Restart
+							</button>
+						</>
+					)}
 				</div>
 			</div>
 		</main>
