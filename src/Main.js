@@ -54,6 +54,7 @@ function Main() {
 				<Field
 					gridState={gridState}
 					gameOver={gameOver}
+					gameClear={gameClear}
 					flipGridSquare={flipGridSquare}
 				/>
 				<div className={`scores ${gameOver || gameClear ? "adjusted" : ""}`}>

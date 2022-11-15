@@ -2,7 +2,7 @@ import "./Field.css";
 import GridSquare from "./GridSquare";
 import TallySquare from "./TallySquare";
 
-function Field({ gridState, gameOver, flipGridSquare }) {
+function Field({ gridState, gameOver, gameClear, flipGridSquare }) {
 	const gridSquares = gridState.map(({ faceUp, value }, index) => (
 		<GridSquare
 			key={index}
@@ -10,6 +10,7 @@ function Field({ gridState, gameOver, flipGridSquare }) {
 			faceUp={faceUp}
 			value={value}
 			gameOver={gameOver}
+			gameClear={gameClear}
 			flipGridSquare={flipGridSquare}
 		></GridSquare>
 	));
