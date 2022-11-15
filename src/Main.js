@@ -46,11 +46,11 @@ function Main() {
 		true
 	);
 
-	if (gameClear) {
+	const nextStage = () => {
 		setGridState(randomStateArray());
 		setGlobalScore((currentGlobalScore) => currentGlobalScore + localScore);
 		setLocalScore(1);
-	}
+	};
 
 	const restartGame = () => {
 		setGridState(randomStateArray());
@@ -78,6 +78,14 @@ function Main() {
 							<p>Game over!</p>
 							<button onClick={restartGame} className="button">
 								Restart
+							</button>
+						</>
+					)}
+					{gameClear && (
+						<>
+							<p>Stage clear!</p>
+							<button onClick={nextStage} className="button">
+								Next stage
 							</button>
 						</>
 					)}
