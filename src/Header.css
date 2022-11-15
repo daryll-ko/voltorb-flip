@@ -1,6 +1,13 @@
 header {
+	align-items: center;
 	background-color: lightcoral;
 	color: white;
+	display: flex;
+	gap: 0.5em;
+	justify-content: center;
 	padding: 0.5em;
-	text-align: center;
+}
+
+.logo {
+	height: 50px;
 }
