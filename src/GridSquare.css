@@ -18,6 +18,10 @@
 	border: 2px solid blue;
 }
 
+.clickable {
+	cursor: pointer;
+}
+
 .aftermath {
 	border: 2px solid gray;
 }
