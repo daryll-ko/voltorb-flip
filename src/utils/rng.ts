@@ -1,4 +1,4 @@
-function generateInteger(low, high) {
+function generateInteger(low: number, high: number): number {
 	// [low, high)
 	return low + Math.floor(Math.random() * (high - low));
 }

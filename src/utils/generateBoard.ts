@@ -1,7 +1,7 @@
-import generateInteger from "./rng";
-import shuffleArray from "./shuffleArray";
+import generateInteger from "./rng.ts";
+import shuffleArray from "./shuffleArray.ts";
 
-const possibleBoardStates = [
+const possibleBoardStates: number[][][] = [
 	[
 		// Level 1
 		[6, 15, 3, 1],
@@ -68,7 +68,7 @@ const possibleBoardStates = [
 	],
 ];
 
-function generateBoard(level) {
+function generateBoard(level: number) {
 	const index = generateInteger(0, 5);
 	const counts = possibleBoardStates[level - 1][index];
 	let valueArray = [];
