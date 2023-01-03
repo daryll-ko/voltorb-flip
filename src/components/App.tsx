@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./Header.tsx";
-import Main from "./Main.tsx";
-import Footer from "./Footer.tsx";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 
 function App() {
 	return (

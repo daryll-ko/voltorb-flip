@@ -1,4 +1,4 @@
-import generateInteger from "./rng.ts";
+import generateInteger from "./rng";
 
 function shuffleArray(a: number[], n: number): number[] {
 	for (let i = 0; i < n - 1; ++i) {

@@ -1,7 +1,7 @@
 import { GameState } from "../utils/types";
 import "./Field.css";
-import GridSquare from "./GridSquare.tsx";
-import TallySquare from "./TallySquare.tsx";
+import GridSquare from "./GridSquare";
+import TallySquare from "./TallySquare";
 
 function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
 	const gridSquares = board.map(({ faceUp, value }, index) => (

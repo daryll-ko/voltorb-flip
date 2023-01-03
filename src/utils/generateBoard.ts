@@ -1,5 +1,5 @@
-import generateInteger from "./rng.ts";
-import shuffleArray from "./shuffleArray.ts";
+import generateInteger from "./rng";
+import shuffleArray from "./shuffleArray";
 import { CellState } from "./types";
 
 const possibleBoardStates: number[][][] = [
