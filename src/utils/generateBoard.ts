@@ -1,5 +1,6 @@
 import generateInteger from "./rng.ts";
 import shuffleArray from "./shuffleArray.ts";
+import { CellState } from "./types";
 
 const possibleBoardStates: number[][][] = [
 	[
@@ -68,7 +69,7 @@ const possibleBoardStates: number[][][] = [
 	],
 ];
 
-function generateBoard(level: number) {
+function generateBoard(level: number): CellState[] {
 	const index = generateInteger(0, 5);
 	const counts = possibleBoardStates[level - 1][index];
 	let valueArray = [];
@@ -78,7 +79,7 @@ function generateBoard(level: number) {
 		}
 	}
 	valueArray = shuffleArray(valueArray, 25);
-	return valueArray.map((value) => ({
+	return valueArray.map((value: number): CellState => ({
 		faceUp: false,
 		value,
 	}));
