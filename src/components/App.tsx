@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col justify-between">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <Main />
       <Footer />

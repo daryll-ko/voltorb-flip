@@ -1,24 +1,23 @@
 import coins from "../images/coins.webp";
 import voltorb from "../images/voltorb.png";
-import { SeriesData } from "../utils/types";
 
-function TallySquare({ sum, voltorbCount }: SeriesData) {
+interface Props {
+  sum: number;
+  voltorbCount: number;
+  color: string;
+}
+
+function TallySquare({ sum, voltorbCount, color }: Props) {
   return (
-    <div className="font-mono box-border h-[80px] w-[80px] border-2 border-solid border-black md:h-[80px] md:w-[80px]">
-      <div className="flex h-[30px] items-center border-b-2 border-solid border-black pl-3 md:h-[40px] md:pl-4">
-        <img
-          src={coins}
-          alt="Coin bag"
-          className="mr-1 h-[15px] w-[15px] md:h-[20px] md:w-[20px]"
-        />
+    <div
+      className={`z-10 flex h-[60px] w-[60px] flex-col rounded-md border-4 border-solid border-white md:h-[80px] md:w-[80px] ${color}`}
+    >
+      <div className="flex h-[50%] items-center border-b-2 border-solid border-white p-1">
+        <img src={coins} alt="Coin bag" className="h-full" />
         <p>{sum}</p>
       </div>
-      <div className="flex h-[40px] items-center pl-4">
-        <img
-          src={voltorb}
-          alt="Voltorb"
-          className="mr-1 h-[15px] w-[15px] md:h-[20px] md:w-[20px]"
-        />
+      <div className="flex h-[50%] items-center border-t-2 border-solid border-white p-1">
+        <img src={voltorb} alt="Voltorb" className="h-full" />
         <p>{voltorbCount}</p>
       </div>
     </div>

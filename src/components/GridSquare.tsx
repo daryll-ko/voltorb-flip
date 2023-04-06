@@ -1,5 +1,17 @@
+import unflipped from "../images/unflipped.png";
 import voltorb from "../images/voltorb.png";
-import { GridSquareState } from "../utils/types";
+import one from "../images/1.svg";
+import two from "../images/2.svg";
+import three from "../images/3.svg";
+
+interface Props {
+  index: number;
+  faceUp: boolean;
+  value: number;
+  gameOver: boolean;
+  gameClear: boolean;
+  flipGridSquare: (index: number) => void;
+}
 
 function GridSquare({
   index,
@@ -8,31 +20,42 @@ function GridSquare({
   gameOver,
   gameClear,
   flipGridSquare,
-}: GridSquareState) {
+}: Props) {
+  const imageSources = [voltorb, one, two, three];
+  const colors = [
+    "bg-[#e07050]",
+    "bg-[#3fa840]",
+    "bg-[#e9a038]",
+    "bg-[#3190f8]",
+    "bg-[#c060e0]",
+  ];
+
   return (
     <div
-      className={`font-mono flex h-[60px] w-[60px] items-center justify-center border border-solid border-black md:h-[80px] md:w-[80px] ${
-        faceUp ? "border-2 border-blue-500 font-bold" : ""
-      } ${!(faceUp || gameOver || gameClear) ? "cursor-pointer" : ""} ${
-        !faceUp && (gameOver || gameClear)
-          ? "border-2 border-gray-500 font-bold"
-          : ""
-      } ${faceUp && value === 0 ? "border-2 border-red-500 font-bold" : ""} `}
+      className={`relative h-[60px] w-[60px] rounded-md border-2 border-solid border-black ring-4 ring-white md:h-[80px] md:w-[80px] ${
+        faceUp ? "bg-[#b88880] p-6" : "bg-[#188060] p-1"
+      } z-10`}
       onClick={() => flipGridSquare(index)}
     >
-      {value === 0 ? (
-        faceUp || gameOver || gameClear ? (
-          <img
-            src={voltorb}
-            alt="Voltorb"
-            className="h-[30px] w-[30px] md:h-[40px] md:w-[40px]"
-          />
-        ) : (
-          <p>?</p>
-        )
+      {faceUp ? (
+        <img
+          src={imageSources[value]}
+          alt="Card contents"
+          className="h-full w-full"
+        />
       ) : (
-        <p>{faceUp || gameOver || gameClear ? value : "?"}</p>
+        <img src={unflipped} alt="Unflipped card" className="h-full w-full" />
       )}
+      <div
+        className={`absolute -right-[22px] bottom-[31px] -z-20 h-[12px] w-[16px] ${
+          colors[Math.floor(index / 5)]
+        } outline outline-4 outline-white`}
+      />
+      <div
+        className={`absolute -bottom-[22px] right-[31px] -z-20 h-[16px] w-[12px] ${
+          colors[index % 5]
+        } outline outline-4 outline-white`}
+      />
     </div>
   );
 }

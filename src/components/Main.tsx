@@ -62,7 +62,7 @@ function Main() {
   };
 
   return (
-    <main className="inline-block p-12 text-center">
+    <main className="inline-block bg-[#29a068] p-12 text-center">
       <Field
         board={gridState.board}
         gameOver={gameOver}

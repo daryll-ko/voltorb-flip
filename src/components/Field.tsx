@@ -15,6 +15,14 @@ function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
     ></GridSquare>
   ));
 
+  const colors = [
+    "bg-[#e07050]",
+    "bg-[#3fa840]",
+    "bg-[#e9a038]",
+    "bg-[#3190f8]",
+    "bg-[#c060e0]",
+  ];
+
   let fieldSquares = [],
     sum = 0,
     voltorbCount = 0;
@@ -27,7 +35,12 @@ function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
     }
     if (i % 5 === 4) {
       fieldSquares.push(
-        <TallySquare key={25 + i / 5} sum={sum} voltorbCount={voltorbCount} />
+        <TallySquare
+          key={25 + Math.floor(i / 5)}
+          sum={sum}
+          voltorbCount={voltorbCount}
+          color={colors[Math.floor(i / 5)]}
+        />
       );
       sum = voltorbCount = 0;
     }
@@ -42,12 +55,17 @@ function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
       }
     }
     fieldSquares.push(
-      <TallySquare key={30 + j} sum={sum} voltorbCount={voltorbCount} />
+      <TallySquare
+        key={30 + j}
+        sum={sum}
+        voltorbCount={voltorbCount}
+        color={colors[j]}
+      />
     );
   }
 
   return (
-    <div className="text-md flex w-[420px] flex-wrap gap-[12px] md:w-[560px] md:gap-[16px] md:text-lg">
+    <div className="text-md mx-auto flex w-[420px] flex-wrap gap-[12px] md:w-[560px] md:gap-[16px] md:text-lg">
       {fieldSquares}
     </div>
   );
