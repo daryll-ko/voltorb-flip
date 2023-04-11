@@ -3,7 +3,7 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      display: ["Roboto Mono"],
+      display: ["Space Mono"],
     },
     extend: {},
   },
