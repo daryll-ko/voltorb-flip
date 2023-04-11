@@ -14,11 +14,11 @@ function TallySquare({ sum, voltorbCount, color }: Props) {
     >
       <div className="flex h-[50%] items-center justify-between border-b-2 border-solid border-white px-2 py-1">
         <img src={coin} alt="Coin" className="h-full" />
-        <p>{sum}</p>
+        <p className="font-bold">{sum}</p>
       </div>
       <div className="flex h-[50%] items-center justify-between border-t-2 border-solid border-white px-2 py-1">
         <img src={voltorb} alt="Voltorb" className="h-full" />
-        <p>{voltorbCount}</p>
+        <p className="font-bold">{voltorbCount}</p>
       </div>
     </div>
   );
