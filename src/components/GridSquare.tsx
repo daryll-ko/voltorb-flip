@@ -30,14 +30,16 @@ function GridSquare({
     "bg-[#c060e0]",
   ];
 
+	const showFaceUp = faceUp || gameOver || gameClear;
+
   return (
     <div
       className={`relative h-[60px] w-[60px] rounded-md border-2 border-solid border-black ring-4 ring-white md:h-[80px] md:w-[80px] ${
-        faceUp ? "bg-[#b88880] p-6" : "bg-[#188060] p-1"
+        showFaceUp ? "bg-[#b88880] p-6" : "bg-[#188060] p-1"
       } z-10`}
       onClick={() => flipGridSquare(index)}
     >
-      {faceUp ? (
+      {showFaceUp ? (
         <img
           src={imageSources[value]}
           alt="Card contents"

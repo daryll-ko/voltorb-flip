@@ -17,7 +17,7 @@ function Main() {
       board: currentGridState.board.map(
         ({ faceUp, value }: CellState, i: number) => ({
           faceUp:
-            i === index && !faceUp && !gameOver && !gameClear
+            i === index && !(faceUp || gameOver || gameClear)
               ? !faceUp
               : faceUp,
           value,
@@ -27,7 +27,7 @@ function Main() {
     setLocalScore((currentLocalScore) => {
       const multiplier = gridState.board.reduce(
         (acc: number, { faceUp, value }: CellState, i: number) =>
-          i === index && !faceUp && !gameOver && !gameClear ? value : acc,
+          i === index && !(faceUp || gameOver || gameClear) ? value : acc,
         1
       );
       return currentLocalScore * multiplier;
