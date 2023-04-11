@@ -69,7 +69,7 @@ function Main() {
         gameClear={gameClear}
         flipGridSquare={flipGridSquare}
       />
-      <div className="mt-4 flex items-center justify-center gap-4">
+      <div className="mt-4 flex items-center justify-center gap-8">
         <p>
           Total coins: <span className="font-bold">{globalScore}</span>
         </p>
@@ -81,7 +81,7 @@ function Main() {
             <p>Game over!</p>
             <button
               onClick={restartGame}
-              className="cursor-pointer border border-solid border-black bg-transparent"
+              className="cursor-pointer rounded-lg border-2 border-solid border-black px-3 py-1 transition-all hover:scale-105"
             >
               Restart
             </button>
@@ -92,7 +92,7 @@ function Main() {
             <p>Stage clear!</p>
             <button
               onClick={nextStage}
-              className="cursor-pointer border border-solid border-black bg-transparent"
+              className="cursor-pointer rounded-lg border-2 border-solid border-black px-3 py-1 transition-all hover:scale-105"
             >
               Next stage
             </button>
