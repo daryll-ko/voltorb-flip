@@ -34,21 +34,21 @@ function GridSquare({
 
   return (
     <div
-      className={`relative h-[60px] w-[60px] rounded-md border-2 border-solid border-black ring-4 ring-white md:h-[80px] md:w-[80px] ${
-        showFaceUp
-          ? "bg-[#b88880] p-6"
-          : "bg-[#188060] p-1 hover:cursor-pointer"
-      } z-10`}
+      className="relative z-10 h-[60px] w-[60px] rounded-md border-2 border-solid border-black ring-4 ring-white md:h-[80px] md:w-[80px]"
       onClick={() => flipGridSquare(index)}
     >
       {showFaceUp ? (
         <img
           src={imageSources[value]}
           alt="Card contents"
-          className="h-full w-full"
+          className="h-full w-full bg-[#b88880] p-6"
         />
       ) : (
-        <img src={unflipped} alt="Unflipped card" className="h-full w-full" />
+        <img
+          src={unflipped}
+          alt="Unflipped card"
+          className="h-full w-full bg-[#188060] p-1 hover:cursor-pointer"
+        />
       )}
       <div
         className={`absolute -right-[22px] bottom-[31px] -z-20 h-[12px] w-[16px] ${
