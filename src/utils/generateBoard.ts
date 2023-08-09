@@ -83,7 +83,7 @@ function generateBoard(level: number): CellState[] {
     (value: number): CellState => ({
       faceUp: false,
       value,
-    })
+    }),
   );
 }
 

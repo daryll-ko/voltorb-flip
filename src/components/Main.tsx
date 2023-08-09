@@ -21,14 +21,14 @@ function Main() {
               ? !faceUp
               : faceUp,
           value,
-        })
+        }),
       ),
     }));
     setLocalScore((currentLocalScore) => {
       const multiplier = gridState.board.reduce(
         (acc: number, { faceUp, value }: CellState, i: number) =>
           i === index && !(faceUp || gameOver || gameClear) ? value : acc,
-        1
+        1,
       );
       return currentLocalScore * multiplier;
     });
@@ -37,13 +37,13 @@ function Main() {
   const gameOver = gridState.board.reduce(
     (acc: boolean, { faceUp, value }: CellState) =>
       acc || (value === 0 && faceUp),
-    false
+    false,
   );
 
   const gameClear = gridState.board.reduce(
     (acc: boolean, { faceUp, value }: CellState) =>
       acc && (value <= 1 || faceUp),
-    true
+    true,
   );
 
   const nextStage = () => {

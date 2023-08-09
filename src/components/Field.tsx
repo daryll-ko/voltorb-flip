@@ -40,7 +40,7 @@ function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
           sum={sum}
           voltorbCount={voltorbCount}
           color={colors[Math.floor(i / 5)]}
-        />
+        />,
       );
       sum = voltorbCount = 0;
     }
@@ -60,7 +60,7 @@ function Field({ board, gameOver, gameClear, flipGridSquare }: GameState) {
         sum={sum}
         voltorbCount={voltorbCount}
         color={colors[j]}
-      />
+      />,
     );
   }
 
