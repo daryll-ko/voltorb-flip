@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./public/demo.png" alt="Voltorb Flip demo">
+<img src="./assets/demo.png" alt="Voltorb Flip demo">
 
 <hr />
 
