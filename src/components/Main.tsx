@@ -14,18 +14,18 @@ export default function Main() {
     const flipTile = (index: number) => {
         setBoardState((currentBoardState) => ({
             ...currentBoardState,
-            board: currentBoardState.board.map(({ faceUp, value }, i) => ({
-                faceUp:
-                    i === index && !(faceUp || isGameOver || isLevelClear)
-                        ? !faceUp
-                        : faceUp,
+            board: currentBoardState.board.map(({ isFaceUp, value }, i) => ({
+                isFaceUp:
+                    i === index && !(isFaceUp || isGameOver || isLevelClear)
+                        ? !isFaceUp
+                        : isFaceUp,
                 value,
             })),
             levelCoins:
                 currentBoardState.levelCoins *
                 currentBoardState.board.reduce(
-                    (acc, { faceUp, value }, i) =>
-                        i === index && !(faceUp || isGameOver || isLevelClear)
+                    (acc, { isFaceUp, value }, i) =>
+                        i === index && !(isFaceUp || isGameOver || isLevelClear)
                             ? value
                             : acc,
                     1
@@ -34,16 +34,16 @@ export default function Main() {
     };
 
     const isGameOver = boardState.board.reduce(
-        (acc, { faceUp, value }) => acc || (value === 0 && faceUp),
+        (acc, { isFaceUp, value }) => acc || (value === 0 && isFaceUp),
         false
     );
 
     const isLevelClear = boardState.board.reduce(
-        (acc, { faceUp, value }) => acc && (value <= 1 || faceUp),
+        (acc, { isFaceUp, value }) => acc && (value <= 1 || isFaceUp),
         true
     );
 
-    const nextStage = () => {
+    const goToNextStage = () => {
         setBoardState((currentBoardState) => ({
             board: generateBoard(currentBoardState.level + 1),
             level: currentBoardState.level + 1,
@@ -95,7 +95,7 @@ export default function Main() {
                     <>
                         <p>Stage clear!</p>
                         <button
-                            onClick={nextStage}
+                            onClick={goToNextStage}
                             className="cursor-pointer rounded-lg border-2 border-solid border-black px-3 py-1 transition-all hover:scale-105"
                         >
                             Next stage
