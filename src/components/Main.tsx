@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Field from "./Field";
+import Board from "./Board";
 import generateBoard from "../utils/generateBoard";
-import { CellState } from "../utils/types";
 
 export default function Main() {
     const [boardState, setBoardState] = useState({
@@ -49,7 +48,7 @@ export default function Main() {
             level: currentBoardState.level + 1,
             totalCoins:
                 currentBoardState.totalCoins + currentBoardState.levelCoins,
-            levelCoins: 0,
+            levelCoins: 1,
         }));
     };
 
@@ -66,7 +65,7 @@ export default function Main() {
 
     return (
         <main className="p-12 text-center">
-            <Field
+            <Board
                 board={boardState.board}
                 isGameOver={isGameOver}
                 isLevelClear={isLevelClear}
