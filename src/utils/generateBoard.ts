@@ -1,6 +1,6 @@
 import { generateInteger } from "./rng";
 import shuffleArray from "./shuffleArray";
-import { CellState } from "./types";
+import { Tile } from "./types";
 
 // [Voltorb, 1's, 2's, 3's]
 const possibleTileTypeCounts: number[][][] = [
@@ -74,7 +74,7 @@ const possibleTileTypeCounts: number[][][] = [
     ],
 ];
 
-export default function generateBoard(level: number): CellState[] {
+export default function generateBoard(level: number): Tile[] {
     const tileTypeCounts =
         possibleTileTypeCounts[Math.min(level, 8)][generateInteger(0, 4 + 1)];
 
