@@ -26,6 +26,6 @@
     "build": "tsc && vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "test": "vitest","
+    "test": "vitest"
   }
 }
