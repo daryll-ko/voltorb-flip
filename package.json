@@ -23,8 +23,8 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "dev": "vite",
     "preview": "vite preview",
     "test": "vitest","
   }
